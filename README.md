@@ -1,4 +1,4 @@
 
 Experimenting with some shaders to produce an colored oil / water affect.
 
-See the demo at gyro851.github.io/waterandoil
+## CLICK HERE See the demo at [https://gyro851.github.io/webgl-shader-experiment/](https://gyro851.github.io/webgl-shader-experiment/)
