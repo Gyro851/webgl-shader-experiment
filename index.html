@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    <meta http-equiv="Cache-Control" content="no-cache">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="mobile-web-app-capable" content="yes">
+    <title>Mark Gardner's WebGL Oil particle experiment</title>
+    <meta name="description" content="Mark Gardner's WebGL Oil particle experiment">
+    <link rel="stylesheet" href="./main.css"/>
+    <link rel="stylesheet" href="https://unpkg.com/bootstrap/dist/css/bootstrap.min.css" />
+    <link rel="stylesheet" href="https://unpkg.com/animate.css/animate.css" type="text/css" />
+    <link rel="stylesheet" href="https://unpkg.com/rmodal/dist/rmodal.css" type="text/css" />
+    <script type="text/javascript" src="https://unpkg.com/rmodal/dist/rmodal.js"></script>
+  </head>
+  <body>
+    <canvas width="5000" height="5000"></canvas>
+    <script src="./main.js"></script>
+    <script src="./modal.js"></script>
+    <div id="modal" class="modal">
+        <div class="modal-dialog animated">
+            <div class="modal-content">
+                <form class="form-horizontal" method="get">
+                    <div class="modal-header">
+                        <strong>Whats this?</strong>
+                    </div>
+
+                    <div class="modal-body">
+                        <div class="form-group">
+                            <label for="dummyText" class="control-label col-xs-4 instr-desktop">On desktop click and drag your mouse around the screen.</label>
+                            <label for="dummyText" class="control-label col-xs-4 instr-mobile">On mobile touch and drag your finger around the screen.</label>
+                        </div>
+                    </div>
+
+                    <div class="modal-footer">
+                        <div class="btn btn-primary" type="submit" onclick="modal.close();">Got it!</div>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+  </body>
+</html>
