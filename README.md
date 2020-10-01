@@ -1,4 +1,4 @@
 
-Experimenting with some shaders to produce an colored oil / water affect.
+Experimenting with some WebGL shaders I came across to produce a smoke effect.
 
-## CLICK HERE See the demo at [https://gyro851.github.io/webgl-shader-experiment/](https://gyro851.github.io/webgl-shader-experiment/)
+## [CLICK HERE See the demo](https://gyro851.github.io/webgl-shader-experiment/)
