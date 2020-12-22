@@ -8,11 +8,11 @@ var config = {
   DYE_RESOLUTION: 1024,
   DENSITY_DISSIPATION: 1,
   VELOCITY_DISSIPATION: 0.2,
-  PRESSURE: 0.8,
-  PRESSURE_ITERATIONS: 30,
-  CURL: 10,
-  SPLAT_RADIUS: 0.25,
-  SPLAT_FORCE: 9000,
+  PRESSURE: 0.3,
+  PRESSURE_ITERATIONS: 10,
+  CURL: 1.10,
+  SPLAT_RADIUS: 0.125,
+  SPLAT_FORCE: 4000,
   SHADING: true,
   COLORFUL: true,
   COLOR_UPDATE_SPEED: 4,
@@ -22,12 +22,12 @@ var config = {
   BLOOM: true,
   BLOOM_ITERATIONS: 8,
   BLOOM_RESOLUTION: 256,
-  BLOOM_INTENSITY: 0.8,
+  BLOOM_INTENSITY: 0.0278,
   BLOOM_THRESHOLD: 0.6,
   BLOOM_SOFT_KNEE: 0.7,
   SUNRAYS: true,
   SUNRAYS_RESOLUTION: 196,
-  SUNRAYS_WEIGHT: 0.5,
+  SUNRAYS_WEIGHT: 0.75,
 };
 
 function pointerPrototype() {
@@ -755,7 +755,6 @@ function updateKeywords() {
 
 updateKeywords();
 initFramebuffers();
-// multipleSplats(parseInt(Math.random() * 20) + 5);
 
 var lastUpdateTime = Date.now();
 var colorUpdateTimer = 0.0;
@@ -809,10 +808,6 @@ function updateColors(dt) {
 }
 
 function applyInputs() {
-  if (splatStack.length > 0) {
-    multipleSplats(splatStack.pop());
-  }
-
   pointers.forEach(function (p) {
     if (p.moved) {
       p.moved = false;
@@ -1078,20 +1073,6 @@ function splatPointer(pointer) {
   splat(pointer.texcoordX, pointer.texcoordY, dx, dy, pointer.color);
 }
 
-function multipleSplats(amount) {
-  for (var i = 0; i < amount; i++) {
-    var color = generateColor();
-    color.r *= 10.0;
-    color.g *= 10.0;
-    color.b *= 10.0;
-    var x = Math.random();
-    var y = Math.random();
-    var dx = 1000 * (Math.random() - 0.5);
-    var dy = 1000 * (Math.random() - 0.5);
-    splat(x, y, dx, dy, color);
-  }
-}
-
 function splat(x, y, dx, dy, color) {
   gl.viewport(0, 0, velocity.width, velocity.height);
   splatProgram.bind();
@@ -1247,9 +1228,9 @@ function correctDeltaY(delta) {
 
 function generateColor() {
   var c = HSVtoRGB(Math.random(), 1.0, 1.0);
-  c.r *= 0.15;
-  c.g *= 0.15;
-  c.b *= 0.15;
+  c.r = 0.07;
+  c.g = 0.07;
+  c.b = 0.07;
   return c;
 }
 

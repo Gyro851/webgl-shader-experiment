@@ -28,3 +28,12 @@
   .modal .modal-dialog {
       width: 90vw;
   }
+  .modal-body label {
+    font-weight: bold;
+  }
+  .links {
+    margin: -100px 0 0 10px;
+    color: #fff;
+    position: absolute;
+    z-index: 2;
+  }
